@@ -1,14 +1,27 @@
 package dev.paie.entite;
 
 import java.time.LocalDate;
+import java.util.Set;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
+@Entity
 public class Periode {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	
 	private LocalDate dateDebut;
+	
 	private LocalDate dateFin;
+	
+	@OneToMany(mappedBy = "periode")
+	private Set<BulletinSalaire> bulletins;
 	
 	public LocalDate getDateDebut() {
 		return dateDebut;
