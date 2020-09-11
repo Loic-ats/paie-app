@@ -18,8 +18,6 @@ public class EmployeService {
 		this.employeRepository = employeRep;
 	}
 
-	// Récupérer un bulletin de salaire en fonction de son id
-
 	@Transactional
 	public Employe creerNouveauEmploye(Entreprise entreprise, ProfilRemuneration profilRemuneration, Grade grade) {
 		Employe nouvelleEmploye = new Employe(entreprise, profilRemuneration, grade);
