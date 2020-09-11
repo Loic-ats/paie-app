@@ -1,7 +1,5 @@
 package dev.paie.controller;
 
-import javax.validation.Valid;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -25,8 +23,8 @@ public class EmployeController {
 			return ResponseEntity.badRequest().body("Le Nom ou le Prénom comporte moins de 3 caractères");
 		}
 
-		return ResponseEntity
-				.ok(new CreerEmployeReponseDto(EmployeService.creerNouveauEmploye(employe.getEntreprise(), employe.getProfilRemuneration(), employe.getGrade()));
+		return ResponseEntity.ok(new CreerEmployeReponseDto(EmployeService.creerNouveauEmploye(employe.getEntreprise(),
+				employe.getProfilRemuneration(), employe.getGrade())));
 	}
 
 }
