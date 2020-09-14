@@ -1,4 +1,4 @@
-package dev.paie.controller;
+package dev.paie.controller.entreprise;
 
 public class CreerEntrepriseRequestDto {
 

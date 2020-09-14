@@ -1,7 +1,9 @@
 package dev.paie.service;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import dev.paie.entite.Entreprise;
 import dev.paie.repository.EntrepriseRepository;
@@ -16,11 +18,12 @@ public class EntrepriseService {
 
 	}
 
-	@Transactional
-	public Entreprise creerNouvelleEntreprise(String siret, String denomination, String adresse, String urssaf,
-			String codeNaf) {
-		Entreprise nouvelleEntreprise = new Entreprise(siret, denomination, adresse, urssaf, codeNaf);
-		return entrepriseRepository.save(nouvelleEntreprise);
-
+	public Optional<Entreprise> recupererEntreprise(int id) {
+		return entrepriseRepository.findById(id);
 	}
+
+	public List<Entreprise> listerEntreprise() {
+		return entrepriseRepository.findAll();
+	}
+
 }

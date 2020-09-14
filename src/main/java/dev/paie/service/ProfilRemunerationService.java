@@ -1,11 +1,10 @@
 package dev.paie.service;
 
+import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.transaction.annotation.Transactional;
-
-import dev.paie.entite.Avantage;
-import dev.paie.entite.Cotisation;
+import dev.paie.controller.profilRemuneration.CreerProfilRemunerationReponseDto;
+import dev.paie.controller.profilRemuneration.CreerProfilRemunerationRequestDto;
 import dev.paie.entite.ProfilRemuneration;
 import dev.paie.repository.ProfilRemunerationRepository;
 
@@ -17,12 +16,16 @@ public class ProfilRemunerationService {
 		this.profilRemunerationRepository = profilRemunerationRepository;
 	}
 
-	@Transactional
-	public ProfilRemuneration creerNouveauProfilRemuneration(String code, List<Avantage> avantages,
-			List<Cotisation> cotisations) {
-		ProfilRemuneration nouveauProfilRemuneration = new ProfilRemuneration(code, avantages, cotisations);
-		return profilRemunerationRepository.save(nouveauProfilRemuneration);
+	public List<CreerProfilRemunerationRequestDto> listerProfils() {
 
+		List<CreerProfilRemunerationRequestDto> listDto = new ArrayList();
+
+		List<ProfilRemuneration> listProfils = profilRemunerationRepository.findAll();
+
+		for (ProfilRemuneration profil : listProfils) {
+			listDto.add(new CreerProfilRemunerationReponseDto(profil));
+		}
+		return listDto;
 	}
 
 }
