@@ -22,7 +22,5 @@ public class EmployeService {
 	public Employe creerNouveauEmploye(Entreprise entreprise, ProfilRemuneration profilRemuneration, Grade grade) {
 		Employe nouvelleEmploye = new Employe(entreprise, profilRemuneration, grade);
 		return employeRepository.save(nouvelleEmploye);
-
 	}
-
 }
