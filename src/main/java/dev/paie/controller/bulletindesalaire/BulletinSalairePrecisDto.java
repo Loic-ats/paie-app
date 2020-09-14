@@ -11,7 +11,7 @@ import dev.paie.service.CotisationService;
 public class BulletinSalairePrecisDto extends CreerBulletinSalaireReponseDto {
 
 	private CotisationService cService;
-	private List<CreerCotisationReponseDto> listeCotisationsBulletinDto = new ArrayList();
+	private List<CreerCotisationReponseDto> listeCotisationsBulletinDto = new ArrayList<>();
 	private String dateDebutPeriodeBulletin;
 	private String dateFinPeriodeBulletin;
 	private String nomEntreprise;

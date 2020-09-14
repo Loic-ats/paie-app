@@ -20,7 +20,7 @@ public class CotisationService {
 
 	public List<CreerCotisationReponseDto> listerCotisations() {
 
-		List<CreerCotisationReponseDto> listDto = new ArrayList();
+		List<CreerCotisationReponseDto> listDto = new ArrayList<>();
 
 		List<Cotisation> listeCotisations = CotisationRepository.findAll();
 

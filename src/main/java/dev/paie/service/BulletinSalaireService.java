@@ -17,13 +17,13 @@ public class BulletinSalaireService {
 
 	private BulletinSalaireRepository BulletinSalaireRepository;
 
-	public BulletinSalaireService(BulletinSalaireRepository repoBulletin) {
+	public BulletinSalaireService(BulletinSalaireRepository BulletinSalaireRepository) {
 		this.BulletinSalaireRepository = BulletinSalaireRepository;
 	}
 
 	public List<CreerBulletinSalaireReponseDto> listerBulletins() {
 
-		List<CreerBulletinSalaireReponseDto> listeDto = new ArrayList();
+		List<CreerBulletinSalaireReponseDto> listeDto = new ArrayList<>();
 
 		List<BulletinSalaire> listeB = BulletinSalaireRepository.findAll();
 
